@@ -3,198 +3,971 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yuan Chang | Purdue Electrical and Computer Engineering</title>
+
+  <meta
+    name="description"
+    content="Yuan (Jack) Chang — Purdue ECE graduate student and researcher in agentic AI, reinforcement learning, computer systems, networking, compilers, and security."
+  />
+
+  <title>Yuan Chang | Purdue ECE</title>
+
   <style>
+    :root {
+      --text: #222;
+      --muted: #666;
+      --line: #e6e6e6;
+      --accent: #8c6a00;
+      --link: #245a9b;
+      --bg: #ffffff;
+      --soft: #fafafa;
+      --max-width: 900px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
     }
-    header {
-      background-color: #222;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
-    }
-    nav {
-      text-align: center;
-      background-color: #444;
-      padding: 0.5rem;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
+
+    a {
+      color: var(--link);
       text-decoration: none;
     }
-    section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
+
+    a:hover {
+      text-decoration: underline;
     }
-    .image-grid {
+
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    header {
+      padding: 52px 0 30px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .header-text {
+      flex: 1;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.45rem;
+      font-weight: 700;
+      line-height: 1.15;
+      color: #111;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .header-links {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .header-links a {
+      margin-right: 14px;
+      white-space: nowrap;
+    }
+
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
+    nav {
+      border-bottom: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    nav .page {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
+      gap: 18px;
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
-    .image-grid img {
-      width: 250px;
-      border-radius: 8px;
-    }
-    footer {
-      background-color: #222;
-      color: #ccc;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-    h2 {
+
+    nav a {
       color: #444;
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* =========================
+       GENERAL
+       ========================= */
+
+    main {
+      padding-bottom: 48px;
+    }
+
+    section {
+      padding: 34px 0 8px;
+      scroll-margin-top: 20px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--line);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.55rem;
+      color: #1a1a1a;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.03rem;
+      line-height: 1.4;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul {
+      margin-top: 8px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+    /* =========================
+       EDUCATION / EXPERIENCE
+       ========================= */
+
+    .entry {
+      margin-bottom: 24px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .degree {
+      margin-top: 3px;
+    }
+
+    /* =========================
+       RESEARCH
+       ========================= */
+
+    .research-list {
+      margin: 0;
+    }
+
+    .research-list li {
+      margin-bottom: 10px;
+    }
+
+    /* =========================
+       PROJECTS
+       ========================= */
+
+    .project {
+      margin-bottom: 22px;
+    }
+
+    .project p {
+      margin-top: 5px;
+      margin-bottom: 6px;
+    }
+
+    /* =========================
+       COURSEWORK
+       ========================= */
+
+    .course-list {
+      columns: 2;
+      column-gap: 36px;
+      padding-left: 20px;
+    }
+
+    .course-list li {
+      break-inside: avoid;
+      margin-bottom: 8px;
+    }
+
+    /* =========================
+       SKILLS
+       ========================= */
+
+    .skills p {
+      margin-bottom: 7px;
+    }
+
+    .label {
+      font-weight: 700;
+    }
+
+    .note {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* =========================
+       CONTACT
+       ========================= */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      margin-top: 36px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      padding: 20px 0 32px;
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 720px) {
+      .header-wrap {
+        align-items: flex-start;
+      }
+
+      .profile-photo {
+        width: 112px;
+        height: 112px;
+      }
+
+      .entry-head {
+        display: block;
+      }
+
+      .date {
+        display: block;
+        margin-top: 3px;
+      }
+
+      .course-list {
+        columns: 1;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .page {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      header {
+        padding-top: 36px;
+      }
+
+      .header-wrap {
+        flex-direction: column-reverse;
+        gap: 20px;
+      }
+
+      .profile-photo {
+        width: 128px;
+        height: 128px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      nav .page {
+        gap: 13px;
+      }
     }
   </style>
 </head>
+
+
 <body>
+
+  <!-- =========================
+       HEADER
+       ========================= -->
+
   <header>
-    <h1>Yuan Chang</h1>
-    <p>Purdue Electrical and Computer Engineering Graduate Student</p>
+    <div class="page header-wrap">
+
+      <div class="header-text">
+        <h1>Yuan (Jack) Chang</h1>
+
+        <p class="subtitle">
+          M.S. Student, Electrical and Computer Engineering<br />
+          Purdue University, West Lafayette
+        </p>
+
+        <div class="header-links">
+          <a href="mailto:chang658@purdue.edu">Email</a>
+
+          <a
+            href="https://github.com/changyuan09"
+            target="_blank"
+            rel="noopener noreferrer">
+            GitHub
+          </a>
+
+          <a
+            href="Resume-CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer">
+            CV / Resume
+          </a>
+        </div>
+      </div>
+
+      <img
+        class="profile-photo"
+        src="DSC01831.JPG"
+        alt="Yuan Chang"
+      />
+
+    </div>
   </header>
 
+
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
+
   <nav>
-    <a href="#About">About</a>
-    <a href="#Skills">Skills</a>
-    <a href="#CourseWork">CourseWork</a>
-    <a href="#Projects">Projects</a>
-    <a href="#Contact">Contact</a>
+    <div class="page">
+      <a href="#About">About</a>
+      <a href="#Education">Education</a>
+      <a href="#Research">Research</a>
+      <a href="#Experience">Experience</a>
+      <a href="#Projects">Projects</a>
+      <a href="#CourseWork">Coursework</a>
+      <a href="#Skills">Skills</a>
+      <a href="#Service">Service</a>
+      <a href="#Publications">Publications</a>
+      <a href="#Contact">Contact</a>
+    </div>
   </nav>
 
-  <section id="About">
-    <h2>About Me</h2>
-    <p>I’m Yuan (Jack) Chang, an ECE graduate student at Purdue University in the 4+1 program. I’m currently conducting my master’s thesis research with Professor Xiaoqi Chen in PurNet, Purdue’s computer networking research lab. I’m passionate about technology, enjoy golf, basketball, and soccer, and I’m seeking full-time roles or Ph.D. opportunities to contribute to impactful work and keep learning.
-    </p>
-    <img src="DSC01831.JPG" alt="Profile" width="200" style="border-radius: 100px;" />
-  </section>
 
-  <section id="Skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Coding : Python, C, Java, MATLAB, FPGA & System-Verilog, Assembly-RISCV, Micro-python, SAS</li>
-      <li>Platforms : VS code, Docker, Linux, Breadboard Circuit Design (PCB), Ki-Cad, Microsoft Office, GitHub, ESP32, STM32</li>
-    </ul>
-  </section>
+  <main class="page">
 
-  <section id="Research Interest">
-    <h2>Research Interests</h2>
-    <ul>
-      <li>
-        I’m interested in deep learning and reinforcement learning for optimizing computer systems, strengthening security, and building intelligent agents that can achieve these goals.
-      </li>
-    </ul>
-  </section>
-  
+    <!-- =========================
+         ABOUT
+         ========================= -->
 
-  <section id="CourseWork">
-    <h2>CourseWork</h2>
-    <ul>
-      <li>
-        ECE 40400 Introduction to Computer Security –
-        <a href="https://engineering.purdue.edu/ECE/Academics/Undergraduates/UGO/UGO/CourseInfo/courseInfo?courseid=515&show=true&type=undergrad" target="_blank">CourseLink</a>
-      </li>
-      <li>
-        ECE 46900 Operating System Engineering –
-        <a href="https://engineering.purdue.edu/ECE/Academics/Graduates/Undergraduates/UGO/CourseInfo/courseInfo?courseid=56&show=true&type=undergrad" target="_blank">CourseLink</a>
-      </li>
-      <li>
-        ECE 40862 Software for Embedded System –
-        <a href="https://engineering.purdue.edu/ECE/Academics/Undergraduates/UGO/AboutUs/CourseInfo/courseInfo?courseid=662&show=true&type=undergrad" target="_blank">CourseLink</a>
-      </li>
-      <li>
-        ECE 57000 Introduction to Artificial Intelligence –
-        <a href="https://engineering.purdue.edu/ECE/Academics/Graduates/Undergraduates/UGO/CourseInfo/courseInfo?courseid=71&show=true&type=grad" target="_blank">CourseLink</a>
-      </li>
-      <li>
-        ECE 50863 Computer Network System –
-        <a href="https://engineering.purdue.edu/ECE/Academics/Undergraduates/UGO/CourseInfo/courseInfo?courseid=663&show=true&type=undergrad" target="_blank">CourseLink</a>
-      </li>
-      <li>
-        ECE 57300 Compiler and Translator Writing System 
-        <a href="https://engineering.purdue.edu/ECE/Academics/Graduates/Undergraduates/UGO/CourseInfo/courseInfo?courseid=441&show=true&type=grad" target="_blank">CourseLink</a>
-      </li>
-      <li>
-        ECE 59500 Reinforcement Learning Theory and Algorithm 
-        <a href="https://engineering.purdue.edu/ECE/Academics/Undergraduates/UGO/CourseInfo/courseInfo?courseid=829&show=true&type=grad" target="_blank">CourseLink</a>
-      </li>
-      <li>
-        ECE 60146 Deep Learning - Future Course Work –
-        <a href="https://engineering.purdue.edu/DeepLearn/" target="_blank">CourseLink</a>
-      </li>
-    </ul>
-  </section>
-  
+    <section id="About">
+      <h2>About</h2>
 
-  <section id="Projects">
-    <h2>Projects</h2>
-    <p>Here are a few of the recent projects I've worked on:</p>
-  
-    <div style="max-width: 800px; margin: auto;">
-  
-      <h3 style="font-size: 1.2rem; margin-bottom: 0.3rem;">IoT-Based Parking Tracker (Senior Design Project – Dec 2024)</h3>
-      <p style="margin-bottom: 1.5rem;">
-        Built an IoT parking monitoring system using ESP32 + HC-SR04 sensors, programmed in MicroPython, networked via BLE in a daisy-chain, and routed through a Raspberry Pi edge server; showcased at Purdue’s Spark Challenge.
-      </p>
-  
-      <h3 style="font-size: 1.2rem; margin-bottom: 0.3rem;">AI Service Agent Internship – OSW Chengdu (July 2025)</h3>
-      <p style="margin-bottom: 1.5rem;">
-        Developed an AI service agent combining a LoRA/QLoRA fine-tuned LLM for PDF QA, containerized with Docker and served via APIs for scalable inference. OSW Chengdu is a startup branch of OSW Australia, a renewable energy resale company.
-      </p>
-  
-      <h3>Master’s Thesis — Prompt Engineering and SFT + RL for Text-Based Games</h3>
       <p>
-        My master’s thesis examines how PPO and GRPO influence an LLM’s chain-of-thought-style reasoning, using text-based games (poker, Minesweeper, Connect Four, Othello, and 2048) to evaluate multi-step planning, reasoning, and decision-making.
+        I am Yuan (Jack) Chang, a graduate student in Electrical and
+        Computer Engineering at Purdue University. I am currently
+        conducting my master’s thesis research under the supervision
+        of Prof. Xiaoqi (Danny) Chen in PurNet, Purdue’s computer
+        networking research laboratory.
       </p>
+
       <p>
-        The workflow is two-stage: (1) supervised fine-tuning (SFT) to obtain a model that can reliably play each game, and (2) reinforcement
-        learning (e.g., GRPO and PPO) to further improve performance and the quality and consistency of reasoning during gameplay.
+        My research interests broadly lie at the intersection of
+        artificial intelligence and computer systems, with particular
+        interests in agentic language models, reinforcement learning,
+        prompt and post-training optimization, distributed AI systems,
+        computer networking, compilers, and security. I am especially
+        interested in methods that use learning-based techniques to
+        improve the efficiency, reliability, reasoning capabilities,
+        and autonomy of computer systems and intelligent agents.
       </p>
-      
-      <h3>Reinforcement Learning Course Project — CartPole Swing-Up with PPO</h3>
+
       <p>
-        Applied PPO to solve CartPole Swing-Up, using eight parallel environments with randomized starts and mini-batch SGD for stable, data-efficient training, with custom policy and value networks implemented from scratch.
+        Outside of research, I enjoy golf, basketball, and soccer.
+        I am currently interested in full-time research and engineering
+        opportunities as well as Ph.D. programs that would allow me to
+        continue conducting research in AI systems and related areas.
       </p>
-      <p>
-        Repository:
-        <a href="https://github.com/changyuan09/CartPole-SwingUp-PPO" target="_blank" rel="noopener noreferrer">
-          https://github.com/changyuan09/CartPole-SwingUp-PPO
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+         ========================= -->
+
+    <section id="Education">
+      <h2>Education</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Purdue University, West Lafayette, IN</h3>
+          <span class="date">Jan 2025 – Present</span>
+        </div>
+
+        <p class="degree">
+          <strong>
+            M.S. in Electrical and Computer Engineering, Thesis Track
+          </strong>
+          <br />
+          Advisor: Prof. Xiaoqi (Danny) Chen
+        </p>
+      </div>
+
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Purdue University, West Lafayette, IN</h3>
+          <span class="date">Aug 2019 – Dec 2024</span>
+        </div>
+
+        <p class="degree">
+          <strong>
+            B.S. in Electrical and Computer Engineering
+          </strong>
+        </p>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         RESEARCH INTERESTS
+         ========================= -->
+
+    <section id="Research">
+      <h2>Research Interests and Technical Background</h2>
+
+      <ul class="research-list">
+
+        <li>
+          <strong>Agentic AI and language-model optimization:</strong>
+          reinforcement learning and prompt/post-training methods for
+          improving the reasoning, planning, decision-making, and
+          adaptability of language-model agents.
+        </li>
+
+        <li>
+          <strong>Reinforcement learning:</strong>
+          practical and algorithmic experience with methods including
+          GRPO and PPO, with interests in their application to
+          language-model reasoning, sequential decision-making, and
+          computer-system optimization.
+        </li>
+
+        <li>
+          <strong>Language-model systems:</strong>
+          transformers, constrained decoding, speculative decoding,
+          transfer learning, model adaptation, and efficient inference
+          and training.
+        </li>
+
+        <li>
+          <strong>Distributed training and AI systems:</strong>
+          familiarity with distributed data parallelism and sharded
+          training approaches, including DDP and FSDP, together with
+          broader interests in efficient large-scale model training
+          and inference.
+        </li>
+
+        <li>
+          <strong>Computer systems, networking, compilers, and security:</strong>
+          interests in applying artificial intelligence and learning-based
+          methods to systems optimization, program analysis, compiler and
+          translation problems, computer networking, and secure computing.
+        </li>
+
+      </ul>
+    </section>
+
+
+    <!-- =========================
+         EXPERIENCE & RESEARCH
+         ========================= -->
+
+    <section id="Experience">
+      <h2>Experience and Research</h2>
+
+
+      <div class="entry">
+
+        <div class="entry-head">
+          <h3>
+            Master’s Thesis Researcher —
+            Purdue Network Research Lab (PurNet)
+          </h3>
+
+          <span class="date">
+            Aug 2025 – Present
+          </span>
+        </div>
+
+        <ul>
+
+          <li>
+            Developed a customized TextArena-based experimental
+            framework for evaluating agentic language models,
+            incorporating constrained decoding and distributed
+            training to support reproducible experiments involving
+            multi-step reasoning, planning, and decision-making.
+          </li>
+
+          <li>
+            Conducted empirical comparisons between prompt-optimization
+            and reinforcement-learning approaches, including GEPA and
+            GRPO, and developed Naive Prompt Optimization (NPO), a
+            lightweight iterative prompt-optimization method designed
+            to investigate how much optimizer-side complexity is
+            necessary for effective prompt improvement.
+          </li>
+
+          <li>
+            Investigated how GRPO influences chain-of-thought-style
+            reasoning and sequential behavior in language models using
+            interactive text-based environments, including poker,
+            Minesweeper, Connect Four, Othello, and 2048, with emphasis
+            on multi-step planning, reasoning, and decision-making.
+          </li>
+
+          <li>
+            Ongoing work extends these studies toward broader questions
+            involving agentic AI, language-model post-training,
+            optimization, cross-model transferability, and the behavior
+            of reasoning models across heterogeneous tasks and
+            interactive environments.
+          </li>
+
+        </ul>
+      </div>
+
+
+      <div class="entry">
+
+        <div class="entry-head">
+          <h3>AI Intern — OSW, Chengdu</h3>
+
+          <span class="date">
+            May 2025 – Jul 2025
+          </span>
+        </div>
+
+        <ul>
+
+          <li>
+            Developed a PDF analysis and question-answering agent by
+            adapting Qwen3-32B with LoRA and integrating the resulting
+            model into a multimodal document-analysis platform.
+          </li>
+
+          <li>
+            Containerized and deployed the service using Docker and
+            server-side APIs, supporting scalable model inference and
+            integration with the broader application pipeline.
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+         ========================= -->
+
+    <section id="Projects">
+      <h2>Selected Projects</h2>
+
+
+      <div class="project">
+
+        <h3>
+          Reinforcement Learning Course Project —
+          CartPole Swing-Up with PPO
+        </h3>
+
+        <p>
+          Implemented PPO for the CartPole Swing-Up problem using eight
+          parallel environments, randomized initial conditions, and
+          mini-batch stochastic gradient descent. The project included
+          custom policy and value networks implemented from scratch and
+          focused on stable and data-efficient reinforcement-learning
+          training.
+        </p>
+
+        <a
+          href="https://github.com/changyuan09/CartPole-SwingUp-PPO"
+          target="_blank"
+          rel="noopener noreferrer">
+          Project repository
         </a>
-      </p>
-      
-  
-      <h3 style="font-size: 1.2rem; margin-bottom: 0.3rem;">More Projects on GitHub</h3>
-      <p style="margin-bottom: 1.5rem;">
-        You can find additional course-related and independent projects on my GitHub profile: 
-        <a href="https://github.com/changyuan09" target="_blank">changyuan09</a>
-      </p>
-  
-    </div>
-  </section>
-  
-  
-  
 
-  <section id="Contact">
-    <h2>Contact</h2>
-    <p>📧 Email: chang658@purdue.edu</p>
-    <p>📍 Location: Purdue University, West Lafayette, IN</p>
-    <p>🌐 GitHub: <a href="https://github.com/changyuan09" target="_blank">jackchang</a></p>
-    <p>
-      📄 If you are interested please view additional details from my resume (CV):
-      <a href="Resume-CV.pdf" target="_blank">Resume-CV (PDF)</a>
-    </p>
-  </section>
+      </div>
+
+
+      <div class="project">
+
+        <h3>Computer Network Systems</h3>
+
+        <p>
+          Implemented and evaluated several networking-system components
+          in Python, including software-defined networking workflows,
+          TCP congestion-control behavior, adaptive bitrate algorithms,
+          and BBR-related mechanisms. The project emphasized understanding
+          how protocol and control decisions influence network performance
+          under different operating conditions.
+        </p>
+
+      </div>
+
+
+      <div class="project">
+
+        <h3>Compiler Engineering</h3>
+
+        <p>
+          Designed and implemented an ANTLR-based compiler that translates
+          C# programs through an abstract syntax tree and intermediate
+          representation into assembly. The project provided practical
+          experience with lexical and syntactic analysis, compiler
+          front-end processing, intermediate program representations,
+          assembly generation, and supporting program-analysis concepts.
+        </p>
+
+      </div>
+
+
+      <div class="project">
+
+        <h3>
+          IoT-Based Parking Tracker —
+          Senior Design Project
+        </h3>
+
+        <p>
+          Led a four-person team in developing an IoT parking-monitoring
+          system using ESP32 microcontrollers, HC-SR04 ultrasonic sensors,
+          MicroPython, BLE daisy-chain communication, and a Raspberry Pi
+          edge server. The project also included custom PCB design and was
+          showcased at Purdue’s Spark Challenge.
+        </p>
+
+      </div>
+
+
+      <div class="project">
+
+        <h3>Additional Projects</h3>
+
+        <p>
+          Additional course-related and independent projects are available
+          on my
+          <a
+            href="https://github.com/changyuan09"
+            target="_blank"
+            rel="noopener noreferrer">
+            GitHub profile
+          </a>.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         COURSEWORK
+         ========================= -->
+
+    <section id="CourseWork">
+      <h2>Relevant Coursework</h2>
+
+      <ul class="course-list">
+
+        <li>
+          ECE 40400 — Introduction to Computer Security
+          (<a
+            href="https://engineering.purdue.edu/ECE/Academics/Undergraduates/UGO/UGO/CourseInfo/courseInfo?courseid=515&show=true&type=undergrad"
+            target="_blank">
+            course
+          </a>)
+        </li>
+
+        <li>
+          ECE 46900 — Operating System Engineering
+          (<a
+            href="https://engineering.purdue.edu/ECE/Academics/Graduates/Undergraduates/UGO/CourseInfo/courseInfo?courseid=56&show=true&type=undergrad"
+            target="_blank">
+            course
+          </a>)
+        </li>
+
+        <li>
+          ECE 40862 — Software for Embedded Systems
+          (<a
+            href="https://engineering.purdue.edu/ECE/Academics/Undergraduates/UGO/AboutUs/CourseInfo/courseInfo?courseid=662&show=true&type=undergrad"
+            target="_blank">
+            course
+          </a>)
+        </li>
+
+        <li>
+          ECE 57000 — Introduction to Artificial Intelligence
+          (<a
+            href="https://engineering.purdue.edu/ECE/Academics/Graduates/Undergraduates/UGO/CourseInfo/courseInfo?courseid=71&show=true&type=grad"
+            target="_blank">
+            course
+          </a>)
+        </li>
+
+        <li>
+          ECE 50863 — Computer Network Systems
+          (<a
+            href="https://engineering.purdue.edu/ECE/Academics/Undergraduates/UGO/CourseInfo/courseInfo?courseid=663&show=true&type=undergrad"
+            target="_blank">
+            course
+          </a>)
+        </li>
+
+        <li>
+          ECE 57300 — Compiler and Translator Writing Systems
+          (<a
+            href="https://engineering.purdue.edu/ECE/Academics/Graduates/Undergraduates/UGO/CourseInfo/courseInfo?courseid=441&show=true&type=grad"
+            target="_blank">
+            course
+          </a>)
+        </li>
+
+        <li>
+          ECE 59500 — Reinforcement Learning Theory and Algorithm
+          (<a
+            href="https://engineering.purdue.edu/ECE/Academics/Undergraduates/UGO/CourseInfo/courseInfo?courseid=829&show=true&type=grad"
+            target="_blank">
+            course
+          </a>)
+        </li>
+
+        <li>
+          ECE 60146 — Deep Learning — Future Coursework
+          (<a
+            href="https://engineering.purdue.edu/DeepLearn/"
+            target="_blank">
+            course
+          </a>)
+        </li>
+
+        <li>
+          ECE 60000 — Random Variables and Signals
+          (<a
+            href="https://engineering.purdue.edu/ECE/Academics/Graduates/Undergraduates/UGO/CourseInfo/courseInfo?courseid=145&show=true&type=grad"
+            target="_blank">
+            course
+          </a>)
+        </li>
+
+        <li>
+          ECE 60800 — Algorithms and Complexity
+          (<a
+            href="https://engineering.purdue.edu/ECE/Academics/Undergraduates/UGO/CourseInfo/courseInfo?courseid=149.0&show=true&type=grad"
+            target="_blank">
+            course
+          </a>)
+        </li>
+
+      </ul>
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+         ========================= -->
+
+    <section id="Skills" class="skills">
+
+      <h2>Skills</h2>
+
+      <p>
+        <span class="label">Programming:</span>
+        Python, C, C#, Java, MATLAB, SystemVerilog,
+        RISC-V Assembly, MicroPython, SAS
+      </p>
+
+      <p>
+        <span class="label">Machine Learning and Systems:</span>
+        PyTorch, TensorFlow, LoRA/QLoRA, Docker,
+        Linux, Git/GitHub, ANTLR
+      </p>
+
+      <p>
+        <span class="label">Hardware:</span>
+        ESP32, STM32, PCB Design, KiCad,
+        Breadboard Circuit Design
+      </p>
+
+      <p>
+        <span class="label">Languages:</span>
+        Mandarin (native), English (fluent)
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         ACADEMIC SERVICE
+         ========================= -->
+
+    <section id="Service">
+
+      <h2>Academic and Professional Service</h2>
+
+      <p>
+        <strong>Shadow TPC Member</strong>,
+        ACM Internet Measurement Conference (IMC 2026)
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         PUBLICATIONS
+         ========================= -->
+
+    <section id="Publications">
+
+      <h2>Publications</h2>
+
+      <p class="note">
+        Publication entries to be added.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+         ========================= -->
+
+    <section id="Contact">
+
+      <h2>Contact</h2>
+
+      <div class="contact-grid">
+
+        <p>
+          <span class="label">Email:</span>
+          <a href="mailto:chang658@purdue.edu">
+            chang658@purdue.edu
+          </a>
+        </p>
+
+        <p>
+          <span class="label">Phone:</span>
+          +1 262-672-7673
+        </p>
+
+        <p>
+          <span class="label">Location:</span>
+          Purdue University, West Lafayette, IN
+        </p>
+
+        <p>
+          <span class="label">GitHub:</span>
+          <a
+            href="https://github.com/changyuan09"
+            target="_blank"
+            rel="noopener noreferrer">
+            changyuan09
+          </a>
+        </p>
+
+        <p>
+          <span class="label">CV:</span>
+          <a
+            href="Resume-CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer">
+            Resume-CV.pdf
+          </a>
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
 
   <footer>
-    &copy; 2025 Yuan Chang. All rights reserved.
+    <div class="page">
+      &copy; 2026 Yuan Chang. All rights reserved.
+    </div>
   </footer>
+
 </body>
 </html>
-
